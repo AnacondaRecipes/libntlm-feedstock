@@ -12,12 +12,10 @@ source:
 
 build:
   number: 1
-  # This package is a dependency of libhdfs3, which is primarily used with HDFS on Linux.
-  skip: True  # [win]
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
 
 test:
   commands:
