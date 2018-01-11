@@ -11,8 +11,11 @@ source:
   md5: 54793488450e9085c57e0d859ff3bc8c
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
+  run_exports:
+    # unknown.  Leaving defaults.
+    - {{ pin_subpackage('libntlm') }}
 
 requirements:
   build:
