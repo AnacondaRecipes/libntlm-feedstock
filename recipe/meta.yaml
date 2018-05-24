@@ -11,7 +11,7 @@ source:
   md5: 54793488450e9085c57e0d859ff3bc8c
 
 build:
-  number: 2
+  number: 3
   skip: True  # [win]
   run_exports:
     # unknown.  Leaving defaults.
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - make
 
 test:
   commands:
