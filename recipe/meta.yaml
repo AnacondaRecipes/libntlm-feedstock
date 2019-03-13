@@ -1,4 +1,4 @@
-{% set version = "1.4" %}
+{% set version = "1.5" %}
 {% set name = "libntlm" %}
 
 package:
@@ -8,13 +8,14 @@ package:
 source:
   fn: libntlm-{{ version }}.tar.gz
   url: http://www.nongnu.org/libntlm/releases/libntlm-{{ version }}.tar.gz
-  md5: 54793488450e9085c57e0d859ff3bc8c
+  sha256: 53d799f696a93b01fe877ccdef2326ed990c0b9f66e380bceaf7bd9cdcd99bbd
 
 build:
-  number: 3
+  number: 0
   skip: True  # [win]
   run_exports:
-    # unknown.  Leaving defaults.
+    # good compatibility
+    # https://abi-laboratory.pro/index.php?view=timeline&l=libntlm
     - {{ pin_subpackage('libntlm') }}
 
 requirements:
@@ -24,14 +25,11 @@ requirements:
 
 test:
   commands:
-    - conda inspect linkages {{ name }}
-    - conda inspect objects {{ name }}       # [osx]
     - test -f $PREFIX/include/ntlm.h
     - test -f $PREFIX/lib/libntlm.a
-    - test -f $PREFIX/lib/libntlm.la
     - test -f $PREFIX/lib/libntlm.so          # [linux]
     - test -f $PREFIX/lib/libntlm.so.0        # [linux]
-    - test -f $PREFIX/lib/libntlm.so.0.0.19   # [linux]
+    - test -f $PREFIX/lib/libntlm.so.0.0.20   # [linux]
     - test -f $PREFIX/lib/libntlm.dylib          # [osx]
     - test -f $PREFIX/lib/libntlm.0.dylib        # [osx]
     - test -f $PREFIX/lib/pkgconfig/libntlm.pc
