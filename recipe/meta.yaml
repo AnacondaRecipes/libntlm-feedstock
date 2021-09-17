@@ -30,7 +30,7 @@ test:
     - test -f $PREFIX/lib/libntlm.a
     - test -f $PREFIX/lib/libntlm.so          # [linux]
     - test -f $PREFIX/lib/libntlm.so.0        # [linux]
-    - test -f $PREFIX/lib/libntlm.so.0.0.20   # [linux]
+    - test -f $PREFIX/lib/libntlm.so.0.0.21   # [linux]
     - test -f $PREFIX/lib/libntlm.dylib          # [osx]
     - test -f $PREFIX/lib/libntlm.0.dylib        # [osx]
     - test -f $PREFIX/lib/pkgconfig/libntlm.pc
