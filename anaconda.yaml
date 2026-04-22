@@ -1,0 +1,5 @@
+anaconda_config_version: 1
+upstream_sources:
+  - webpage:
+      url: https://download.savannah.gnu.org/releases/libntlm/
+      regex: libntlm-([\d.]+)\.tar\.gz
